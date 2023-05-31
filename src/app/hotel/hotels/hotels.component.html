@@ -1,0 +1,18 @@
+<div class="container mx-auto mt-40 mb-8 px-4">
+  <h1 class="text-3xl font-bold text-gray-800 mb-8">Choose the suitable one for you!</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div *ngFor="let hotel of hotels" class="card bg-white shadow-lg rounded-lg overflow-hidden">
+      <a [routerLink]="['/hotel', hotel.id]" class="block">
+        <div class="relative h-48">
+          <img class="w-full h-full object-cover object-center transform transition-transform hover:scale-105" [src]="hotel.imageUrl" [alt]="hotel.name" />
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-gray-900">{{ hotel.name }}</h3>
+          <p class="text-sm text-gray-500 mb-2">{{ hotel.city }}, {{ hotel.country }}</p>
+          <p class="text-2xl font-semibold text-indigo-600 mb-4">${{ hotel.priceOfNight }}/night</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>

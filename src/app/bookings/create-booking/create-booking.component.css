@@ -1,0 +1,12 @@
+::ng-deep .mat-dialog-container {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+}
+
+::ng-deep .mat-datepicker-content {
+  max-width: 320px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}

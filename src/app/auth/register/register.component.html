@@ -1,0 +1,116 @@
+<div class="flex mt-10 sm:mt-0">
+  <div class="w-2/5 bg-gray-900 hidden sm:flex items-center justify-center">
+    <div class="p-8">
+      <img class="h-80 w-auto mx-auto rounded-md"
+           src="https://cf.bstatic.com/static/img/theme-index/bg_resorts/6e8294d75f648eab2cd2818f0a40854367e584a5.jpg"
+           alt="Background Image">
+    </div>
+  </div>
+  <div class="w-full sm:w-3/5 bg-white flex items-center justify-center">
+    <div class="min-h-screen bg-gray-100 flex flex-col justify-center py-12 w-full sm:w-4/5">
+      <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+          Register
+        </h2>
+      </div>
+
+      <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="bg-white py-8 px-4 sm:px-10 shadow rounded-md sm:rounded-lg mx-8 sm:mx-0">
+          <form (ngSubmit)="register()" [formGroup]="registerForm">
+            <div>
+              <label for="firstName" class="block text-sm font-medium leading-5 text-gray-700">
+                First Name
+              </label>
+              <div class="mt-1 rounded-md shadow-sm">
+                <input id="firstName" formControlName="firstName" type="text" required
+                class="appearance-none block w-full px-3 py-2 border border-gray-300
+                placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500
+                focus:border-indigo-500 sm:text-sm sm:leading-5 rounded-md">
+              </div>
+              <div *ngIf="submitted && f.firstName.invalid" class="text-red-500 text-sm mt-1">
+                Please enter your first name.
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <label for="lastName" class="block text-sm font-medium leading-5 text-gray-700">
+                Last Name
+              </label>
+              <div class="mt-1 rounded-md shadow-sm">
+                <input id="lastName" formControlName="lastName" type="text" required
+                class="appearance-none block w-full px-3 py-2 border border-gray-300
+                placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500
+                focus:border-indigo-500 sm:text-sm sm:leading-5 rounded-md">
+              </div>
+              <div *ngIf="submitted && f.lastName.invalid" class="text-red-500 text-sm mt-1">
+                Please enter your last name.
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <label for="email" class="block text-sm font-medium leading-5 text-gray-700">
+                Email
+              </label>
+              <div class="mt-1 rounded-md shadow-sm">
+                <input id="email" formControlName="email" type="email" required
+                class="appearance-none block w-full px-3 py-2 border border-gray-300
+                placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500
+                focus:border-indigo-500 sm:text-sm sm:leading-5 rounded-md">
+              </div>
+              <div *ngIf="submitted && f.email.invalid" class="text-red-500 text-sm mt-1">
+                Please enter a valid email address.
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <label for="password" class="block text-sm font-medium leading-5 text-gray-700">
+                Password
+              </label>
+              <div class="mt-1 rounded-md shadow-sm">
+                <input id="password" formControlName="password" type="password" required
+                class="appearance-none block w-full px-3 py-2 border border-gray-300
+                placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500
+                focus:border-indigo-500 sm:text-sm sm:leading-5 rounded-md">
+              </div>
+              <div *ngIf="submitted && f.password.invalid" class="text-red-500 text-sm mt-1">
+                Please enter a password.
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <label for="country" class="block text-sm font-medium leading-5 text-gray-700">
+                Country
+              </label>
+              <div class="mt-1 rounded-md shadow-sm">
+                <select id="country" formControlName="country" class="appearance-none block w-full px-3 py-2 border border-gray-300
+                placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500
+                focus:border-indigo-500 sm:text-sm sm:leading-5 rounded-md">
+                  <option value="" disabled selected>Select a country</option>
+                  <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                </select>
+              </div>
+              <div *ngIf="submitted && f.country.invalid" class="text-red-500 text-sm mt-1">
+                Please select a country.
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <button type="submit"
+                      class="w-full flex justify-center py-2 px-4 border border-transparent
+                      text-sm font-medium rounded-md   text-white bg-indigo-600
+                      hover:bg-indigo-500 focus:outline-none focus:border-indigo-700
+                      focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="mt-6">
+          <p class="mt-2 text-center text-sm leading-5 text-gray-600">
+            Already have an account? <a routerLink="/auth/login" class="font-medium text-indigo-600 hover:text-indigo-500">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+/* Use your desired styling here or customize further */
+
+a {
+  display: inline-block;
+}
+
+a:hover {
+  transform: translateY(-2px);
+}
+
+.bg-gradient-to-r {
+  background: linear-gradient(to right, rgba(129, 43, 170), rgba(236, 72, 153), rgba(251, 99, 64));
+}
