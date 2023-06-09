@@ -2,13 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Booking } from '../models/models';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from 'src/env/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookingsService {
 
-  baseUrl = 'https://localhost:7231/api/';
+  baseUrl = environment.apiUrl;
 
   token;
 

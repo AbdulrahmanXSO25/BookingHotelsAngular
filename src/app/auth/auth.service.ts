@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { User } from '../models/models';
+import { environment } from 'src/env/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { User } from '../models/models';
 
 export class AuthService {
 
-  baseUrl = 'https://localhost:7231/api/';
+  baseUrl = environment.apiUrl;
 
   private currentUserSource = new ReplaySubject<User | null>(1);
   currentUser$ = this.currentUserSource.asObservable();
